@@ -17,7 +17,7 @@ namespace RC.TestUnitWithMoq.Service
 
         public OrderResponse Save(Order order)
         {
-            if(order.CreatedDate.Ticks == 0)
+            if (order.CreatedDate.Ticks == 0)
             {
                 throw new ArgumentNullException("CreatedDate field is required");
             }

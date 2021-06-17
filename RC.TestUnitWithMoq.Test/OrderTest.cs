@@ -89,5 +89,20 @@ namespace RC.TestUnitWithMoq.Test
                 Assert.IsTrue(ex.Message.Contains("CreatedDate field is required"));
             }
         }
+
+        [Test]
+        public void Save_ShouldReturnNothing_WhenOrderNull()
+        {
+            //Arrange
+            var order = new Order();
+            this.orderRepositoryMock.Setup(x => x.Salvar(order)).Returns(() => null);
+
+            //Act
+            var item = this.orderService.Save(new Order { CreatedDate = DateTime.Now });
+
+            //Assets
+            Assert.Null(item);
+
+        }
     }
 }
