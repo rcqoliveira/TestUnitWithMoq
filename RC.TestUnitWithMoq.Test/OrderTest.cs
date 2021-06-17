@@ -91,7 +91,7 @@ namespace RC.TestUnitWithMoq.Test
         }
 
         [Test]
-        public void Save_ShouldReturnNothing_WhenOrderNull()
+        public void Save_ShouldReturnNothing_WhenOrderDoesNotExist()
         {
             //Arrange
             var order = new Order();
